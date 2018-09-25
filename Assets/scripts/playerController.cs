@@ -1,14 +1,16 @@
-﻿
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class playerController : MonoBehaviour {
 
-	// Update is called once per frame
-	void Update () {
-        var xRotation = Input.GetAxis("Horizontal");
-        var zMovement = Input.GetAxis("Vertical");
-
-        transform.Rotate(0, xRotation, 0);
-        transform.Translate(0, 0, zMovement);
-	}
+  void Update(){
+  var xRotation =Input.GetAxis("Horizontal");
+  var zRotation =Input.GetAxis("Vertical");
+  
+  transform.parent.transform.Rotate(0,xRotation,0);
+  transform.parent.transform.Translate(0,0,zRotation);
+  
+  }
+  
 }
